@@ -155,7 +155,7 @@ export class HomePage extends Component {
         <Tabs
           fill
           variant="pills"
-          className="mb-3"
+          className="mb-3 "
           activeKey={activeTab}
           onSelect={changeTab}
         >

@@ -17,7 +17,7 @@ export class TodoCard extends Component {
         className="d-flex justify-content-between align-items-center"
       >
         <div>
-          <h3>{name}</h3>
+          <h5>{name}</h5>
           <span className="badge bg-warning p-1 rounded-sm text-white">
             {date}
           </span>

@@ -10,9 +10,10 @@ export class TodoForm extends Component {
         noValidate
         validated={validated}
         onSubmit={submit}
-        className="w-50 mx-auto my-5"
+        className="mx-auto my-5"
+        style={{ maxWidth: "500px", width: "100%" }} // Mobil uchun moslashgan o'lcham
       >
-        <Form.Group className="mb-3" controlId="name">
+        <Form.Group className="mb-3 w-100" controlId="name">
           <Form.Label>Todo name</Form.Label>
           <Form.Control
             onChange={handleTodo}
@@ -22,7 +23,7 @@ export class TodoForm extends Component {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="date">
+        <Form.Group className="mb-3 w-100" controlId="date">
           <Form.Label>Todo date</Form.Label>
           <Form.Control
             onChange={handleTodo}
@@ -33,8 +34,8 @@ export class TodoForm extends Component {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="importance">
-          <Form.Label>Importanece</Form.Label>
+        <Form.Group className="mb-3 w-100" controlId="importance">
+          <Form.Label>Importance</Form.Label>
           <Form.Select onChange={handleTodo} value={todo.importance} required>
             <option value="high">High</option>
             <option value="middle">Middle</option>
@@ -43,7 +44,7 @@ export class TodoForm extends Component {
         </Form.Group>
 
         <Button className="w-100" type="submit">
-          {selected === null ? "Add" : "Save "} Todo
+          {selected === null ? "Add" : "Save"} Todo
         </Button>
       </Form>
     );
