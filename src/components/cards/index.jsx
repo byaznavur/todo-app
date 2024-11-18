@@ -14,7 +14,7 @@ export class TodoCard extends Component {
     return (
       <Alert
         variant={`${dataColor[importance]}`}
-        className="d-flex justify-content-between align-items-center"
+        className="d-flex justify-content-between flex-wrap sm:flex-nowrap align-items-center"
       >
         <div>
           <h5>{name}</h5>

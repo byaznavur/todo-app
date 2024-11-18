@@ -44,7 +44,7 @@ export class HomePage extends Component {
       },
       selected: null,
       search: "",
-      importance: "high",
+      importance: "all",
       validated: false,
     };
   }
@@ -68,7 +68,9 @@ export class HomePage extends Component {
         let newTodo = { ...todo, id: v4() };
         if (selected === null) {
           newTodos = [...todos, newTodo];
-          toast.success("Todo add");
+          toast.success("Todo add", {
+            autoClose: 1000,
+          });
         } else {
           newTodos = todos.map((todo) => {
             if (todo.id === selected) {
@@ -76,7 +78,9 @@ export class HomePage extends Component {
             }
             return todo;
           });
-          toast.warn("Todo edit");
+          toast.warn("Todo edit", {
+            autoClose: 1000,
+          });
         }
         localStorage.setItem("todos", JSON.stringify(newTodos));
 
@@ -121,14 +125,18 @@ export class HomePage extends Component {
       });
       this.setState({ todos: newTodos });
       localStorage.setItem("todos", JSON.stringify(newTodos));
-      toast.info("Todo done");
+      toast.info("Todo done", {
+        autoClose: 1000,
+      });
     };
 
     const deleteTodo = (id) => {
       let newTodos = todos.filter((todo) => todo.id !== id);
       this.setState({ todos: newTodos });
       localStorage.setItem("todos", JSON.stringify(newTodos));
-      toast.error("Todo deleted");
+      toast.error("Todo deleted", {
+        autoClose: 1000,
+      });
     };
 
     const editTodo = (id) => {
@@ -138,7 +146,7 @@ export class HomePage extends Component {
     };
     return (
       <Container>
-        <h1 className="text-center">Todo App</h1>
+        <h1 className="text-center mt-3">Todo App</h1>
         <TodoForm
           todo={todo}
           submit={submit}
